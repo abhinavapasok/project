@@ -19,18 +19,18 @@ services:
       - PGPORT=5432
     ports:
       - "8080:8080"
-  client:
-    stdin_open: true
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    build:
-      dockerfile: Dockerfile.prod
-      context: ./project_frontend-main
-    volumes:
-      - /app/node_modules
-      - ./project_frontend-main:/app
-    ports:
-      - "3000:80"
+  # client:
+  #   stdin_open: true
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
+  #   build:
+  #     dockerfile: Dockerfile.prod
+  #     context: ./project_frontend-main
+  #   volumes:
+  #     - /app/node_modules
+  #     - ./project_frontend-main:/app
+  #   ports:
+  #     - "3000:80"
   # nginx:
   #   depends_on:
   #     - api
